@@ -1,17 +1,17 @@
 package entities;
 
 public class Carro {
-    private String nome;
+    private String modelo;
 
-    public Carro(String nome) {
-        this.nome = nome;
+    public Carro(String modelo) {
+        this.modelo = modelo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 }
