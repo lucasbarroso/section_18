@@ -1,28 +1,30 @@
 package entities;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class AluguelCarro {
-    private Date inicio;
-    private Date fim;
+    private LocalDate inicio;
+    private LocalDate fim;
     private Carro carro;
     private Fatura fatura;
     
-    public AluguelCarro(Date inicio, Date fim, Carro carro, Fatura fatura) {
+
+    public AluguelCarro(LocalDate inicio, LocalDate fim, Carro carro, Fatura fatura) {
         this.inicio = inicio;
         this.fim = fim;
         this.carro = carro;
         this.fatura = fatura;
     }
-    public Date getInicio() {
-        return inicio;
-    }
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-    public Date getFim() {
+    public LocalDate getInicio() {
         return fim;
     }
-    public void setFim(Date fim) {
+    public void setInicio(LocalDate inicio) {
+        this.inicio = inicio;
+    }
+    public LocalDate getFim() {
+        return fim;
+    }
+    public void setFim(LocalDate fim) {
         this.fim = fim;
     }
     public Carro getCarro() {
@@ -37,7 +39,12 @@ public class AluguelCarro {
     public void setFatura(Fatura fatura) {
         this.fatura = fatura;
     }
-   
+    public String getDataFormatada(DateTimeFormatter date) {
+        final DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        String inicioFormatado = date.format(formato);
+
+        return inicioFormatado;
+    }
    
 
 }
